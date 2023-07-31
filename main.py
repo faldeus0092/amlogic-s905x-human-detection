@@ -15,16 +15,16 @@ parser.add_argument("-c", "--cctv", default=11, help="1: Lift Gerbang Barat, 2: 
 args = parser.parse_args()
 
 # get all required args
+
+# endpoint to this website [https://github.com/faldeus0092/tugas-akhir-cctv]
 # API_ENDPOINT = 'http://10.15.43.73:5000/api/footage'
 API_ENDPOINT = 'http://localhost:5000/api/footage'
 STREAM_NUMBER = args.stream
 CCTV_NUMBER = args.cctv
 PATH_TO_SAVED_MODEL="../inference_graph_v2_40k/saved_model"
-PATH_TO_YOLOV4_WEIGHT = 'D:/Kuliah/Bangkit ML/TA/technical/yolo-coco/data/yolov4-tiny-custom_last.weights'
+PATH_TO_YOLOV4_WEIGHT = 'D:/Kuliah/Bangkit ML/TA/technical/yolo-coco/data/yolov4-tiny-custom-v2_last.weights'
 PATH_TO_YOLOV4_CFG = 'D:/Kuliah/Bangkit ML/TA/technical/yolo-coco/yolov4-tiny-custom.cfg'
-# PATH_TO_SAVED_MODEL="inference_graph_v3_40k/saved_model"
-# PATH_TO_YOLOV4_WEIGHT = '/home/gavin/yolo/data/yolov4-tiny-custom-v2_last.weights'
-# PATH_TO_YOLOV4_CFG = '/home/gavin/yolo/yolov4-tiny-custom-v2.cfg'
+
 URL = f"rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/{CCTV_NUMBER}0{STREAM_NUMBER}"
 
 def mobilenetv2_inference(stream):
