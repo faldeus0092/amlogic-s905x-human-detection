@@ -16,7 +16,7 @@ Follow this step if you want to train the model from scratch. Otherwise, use the
   Use [fiftyone](https://docs.voxel51.com/user_guide/export_datasets.html#basic-recipe) to download datasets of certain class. Refer to [fiftyone_coco.ipynb](https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/main/main.py) and adjust the path to your own machine.
 
 ### Training the model
-Model are trained on google colab. Use techzizou's tutorial for [MobileNetV2](https://techzizou.com/training-an-ssd-model-for-a-custom-object-using-tensorflow-2-x/) and [YOLOv4-tiny](https://techzizou.com/train-a-custom-yolov4-tiny-object-detector-using-google(-colab-tutorial-for-beginners/).
+Model are trained on google colab. Use techzizou's tutorial for [MobileNetV2](https://techzizou.com/training-an-ssd-model-for-a-custom-object-using-tensorflow-2-x/) and [YOLOv4-tiny](https://techzizou.com/train-a-custom-yolov4-tiny-object-detector-using-google(-colab-tutorial-for-beginners/). The train configs used to train the model on this repository are inside both ssd and yolo folder.
 
 ## Running the inference from RTSP stream
 Clone or download this repo to your Amlogic S905x device
