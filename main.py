@@ -21,9 +21,9 @@ args = parser.parse_args()
 API_ENDPOINT = 'http://localhost:5000/api/footage'
 STREAM_NUMBER = args.stream
 CCTV_NUMBER = args.cctv
-PATH_TO_SAVED_MODEL="../inference_graph_v2_40k/saved_model"
-PATH_TO_YOLOV4_WEIGHT = 'D:/Kuliah/Bangkit ML/TA/technical/yolo-coco/data/yolov4-tiny-custom-v2_last.weights'
-PATH_TO_YOLOV4_CFG = 'D:/Kuliah/Bangkit ML/TA/technical/yolo-coco/yolov4-tiny-custom.cfg'
+PATH_TO_SAVED_MODEL="ssd/inference_graph/saved_model"
+PATH_TO_YOLOV4_WEIGHT = "yolo/yolov4-tiny-custom-v2_last.weights"
+PATH_TO_YOLOV4_CFG = "yolo/yolov4-tiny-custom.cfg"
 
 URL = f"rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/{CCTV_NUMBER}0{STREAM_NUMBER}"
 
