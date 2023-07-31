@@ -24,6 +24,7 @@ CCTV_NUMBER = args.cctv
 PATH_TO_SAVED_MODEL="ssd/inference_graph/saved_model"
 PATH_TO_YOLOV4_WEIGHT = "yolo/yolov4-tiny-custom-v2_last.weights"
 PATH_TO_YOLOV4_CFG = "yolo/yolov4-tiny-custom.cfg"
+#test
 
 URL = f"rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/{CCTV_NUMBER}0{STREAM_NUMBER}"
 
