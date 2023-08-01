@@ -23,8 +23,7 @@ Clone or download this repo to your Amlogic S905x device
 To run human detection inference on s905x devices:
 1. Adjust the path to saved model & weights
 	- https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/9d5dfaf3e7ea9425c748130037c9a118c9412156/main.py#L22-L24
-2. Run the program, example ```main.py --model yolo --api http://localhost:5000/api/footage --url rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/1101 --cctv 2```. You can adjust the ```--model``` to ```yolo``` or ```mobilenet```. ```--api``` used for API endpoint that [this website](https://github.com/faldeus0092/tugas-akhir-cctv) is hosted on (adjust to your IP accordingly). ```url``` used for RTSP URL. ```--cctv``` used for CCTV number registered on database. 
-	- https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/9d5dfaf3e7ea9425c748130037c9a118c9412156/main.py#L28
+2. Run the program, example ```main.py --model yolo --api http://localhost:5000/api/footage --url rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/1101 --cctv 2```. You can adjust the ```--model``` to ```yolo``` or ```mobilenet```. ```--api``` used for API endpoint ```/api/footage``` that [this website](https://github.com/faldeus0092/tugas-akhir-cctv) is hosted on (adjust to your IP accordingly). ```url``` used for RTSP URL. ```--cctv``` used for CCTV number registered on database. 
 3. The result can be seen on website (adjust the IP according to your host) ```http://localhost:5000/video_feed/[cctv_id]```
 
 
