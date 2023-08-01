@@ -21,12 +21,9 @@ Model are trained on google colab. Use techzizou's tutorial for [MobileNetV2](ht
 ## Running the inference from RTSP stream
 Clone or download this repo to your Amlogic S905x device
 To run human detection inference on s905x devices:
-1. Adjust the [main.py](https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/main/main.py) file
-- adjust line ```API_ENDPOINT = 'http://localhost:5000/api/footage'``` to IP of your own machine that [this repository](https://github.com/faldeus0092/tugas-akhir-cctv) is hosted on. Note that this website  was designed for public RTSP of Institut Teknologi Sepuluh Nopember Information Technology department. If you are using other RTSP, you might have to adjust a few things on [this repository](https://github.com/faldeus0092/tugas-akhir-cctv)
-	- https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/a5be4f2328403586e9447fde623b189154f224d3/main.py#L21
-- adjust the path to saved model & weights
-	- https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/a5be4f2328403586e9447fde623b189154f224d3/main.py#L24-L26
-2. Run the program ```main.py --model yolo --stream 1 --cctv 11```. Adjust the parameter to change model. This program assumes you have access to public RTSP of Institut Teknologi Sepuluh Nopember Information Technology department. If you are not, you can use custom RTSP link by adjusting ```URL = f"rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/{CCTV_NUMBER}0{STREAM_NUMBER}"```
+1. Adjust the path to saved model & weights
+	- https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/9d5dfaf3e7ea9425c748130037c9a118c9412156/main.py#L22-L24
+2. Run the program, example ```main.py --model yolo --api http://localhost:5000/api/footage --url rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/1101 --cctv 2```. You can adjust the ```--model``` to ```yolo``` or ```mobilenet```. ```--api``` used for API endpoint that [this website](https://github.com/faldeus0092/tugas-akhir-cctv) is hosted on (adjust to your IP accordingly). ```url``` used for RTSP URL. ```--cctv``` used for CCTV number registered on database. 
 	- https://github.com/faldeus0092/amlogic-s905x-human-detection/blob/9d5dfaf3e7ea9425c748130037c9a118c9412156/main.py#L28
 3. The result can be seen on website (adjust the IP according to your host) ```http://localhost:5000/video_feed/[cctv_id]```
 

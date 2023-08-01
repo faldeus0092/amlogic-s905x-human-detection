@@ -10,23 +10,24 @@ import argparse
 # parse argument
 parser = argparse.ArgumentParser(prog="Program human detection menggunakan SSD MobileNetV2 / YOLOv4-tiny pada Dept. Teknologi Informasi ITS", usage="Human Detection")
 parser.add_argument("-m", "--model", default="mobilenet", help="model selection. use mobilenet or yolo")
-parser.add_argument("-s", "--stream", default=2, help="stream number. 1=main, 2=sub")
-parser.add_argument("-c", "--cctv", default=11, help="1: Lift Gerbang Barat, 2: Selasar Gerbang Barat, 11: Lab KCKS Belakang, 3: Selasar Lab KCKS")
+parser.add_argument("-u", "--url", default="rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/1101", help="rtsp url")
+parser.add_argument("-a", "--api", default="http://localhost:5000/api/footage", help="api url")
+# parser.add_argument("-s", "--stream", default=2, help="stream number. 1=main, 2=sub")
+parser.add_argument("-c", "--cctv", help="1: Lift Gerbang Barat, 2: Selasar Gerbang Barat, 11: Lab KCKS Belakang, 3: Selasar Lab KCKS")
 args = parser.parse_args()
 
 # get all required args
 
 # endpoint to this website [https://github.com/faldeus0092/tugas-akhir-cctv]
 # API_ENDPOINT = 'http://10.15.43.73:5000/api/footage'
-API_ENDPOINT = 'http://localhost:5000/api/footage'
-STREAM_NUMBER = args.stream
+API_ENDPOINT = args.api
+URL = args.url
+# STREAM_NUMBER = args.stream
 CCTV_NUMBER = args.cctv
 PATH_TO_SAVED_MODEL="ssd/inference_graph/saved_model"
 PATH_TO_YOLOV4_WEIGHT = "yolo/yolov4-tiny-custom-v2_last.weights"
 PATH_TO_YOLOV4_CFG = "yolo/yolov4-tiny-custom.cfg"
-#test
-
-URL = f"rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/{CCTV_NUMBER}0{STREAM_NUMBER}"
+# URL = f"rtsp://KCKS:majuteru5@10.15.40.48:554/Streaming/Channels/{CCTV_NUMBER}0{STREAM_NUMBER}"
 
 def mobilenetv2_inference(stream):
     frame_count = 0
